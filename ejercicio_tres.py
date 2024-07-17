@@ -1,6 +1,18 @@
 """
-crear un funcion que me retorne un diccioonario de la cantidad de vocales que aparecen en un texto pasado por parametro el diccionario debera ser credo por comprension de diccionarios
-ejm:
-entrada: eucalipto
-salida: {e:1,u:1,a:1,i:1,o:1}
+crear una funcion que haciendo uso del metodo filter me filtre los numeros primos de una lista pasada por parametros
 """
+def es_primo(numero):
+    if numero <= 1:
+        return False
+    for i in range(2, int(numero**0.5) + 1):
+        if numero % i == 0:
+            return False
+    return True
+
+def filtrar_primos(lista):
+    return list(filter(es_primo, lista))
+
+# Ejemplo de uso:
+numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+primos = filtrar_primos(numeros)
+print("Números primos en la lista:", primos)
